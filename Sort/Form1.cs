@@ -19,16 +19,21 @@ namespace Sort
         int[] mass;
         private void B1_Click(object sender, EventArgs e)
         {
+			mass = new int[TBGRN.Text.Split(new string[]{" "},StringSplitOptions.RemoveEmptyEntries).Length];
+			for (int i = 0; i < TBGRN.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Length; i++)
+				mass[i] = Convert.ToInt32(TBGRN.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries)[i]);
             ResF f = new ResF();
             f.Owner = this;
             f.Type = 0;
             f.mass = mass;
             f.vv = checkBox1.Checked;
             f.Show();
-        }
-
+		}
         private void B2_Click(object sender, EventArgs e)
-        {
+		{
+			mass = new int[TBGRN.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Length];
+			for (int i = 0; i < TBGRN.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Length; i++)
+				mass[i] = Convert.ToInt32(TBGRN.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries)[i]);
             ResF f = new ResF();
             f.Owner = this;
             f.Type = 1;
@@ -36,9 +41,11 @@ namespace Sort
             f.vv = checkBox1.Checked;
             f.Show();
         }
-
         private void B3_Click(object sender, EventArgs e)
-        {
+		{
+			mass = new int[TBGRN.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Length];
+			for (int i = 0; i < TBGRN.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Length; i++)
+				mass[i] = Convert.ToInt32(TBGRN.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries)[i]);
             ResF f = new ResF();
             f.Owner = this;
             f.Type = 2;
@@ -46,9 +53,11 @@ namespace Sort
             f.vv = checkBox1.Checked;
             f.Show();
         }
-
         private void B4_Click(object sender, EventArgs e)
-        {
+		{
+			mass = new int[TBGRN.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Length];
+			for (int i = 0; i < TBGRN.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Length; i++)
+				mass[i] = Convert.ToInt32(TBGRN.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries)[i]);
             ResF f = new ResF();
             f.Owner = this;
             f.Type = 3;
@@ -56,7 +65,6 @@ namespace Sort
             f.vv = checkBox1.Checked;
             f.Show();
         }
-
         private void GRN_Click(object sender, EventArgs e)
         {
             int Count;
@@ -72,7 +80,6 @@ namespace Sort
                 }
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             int Count;
@@ -87,7 +94,6 @@ namespace Sort
                 }
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             int Count;

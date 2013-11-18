@@ -332,63 +332,63 @@ namespace Sort
                 label5.Text = coun.ToString();
             }
         }
-        void Type3Sort(bool write)
-        {
-            if (write)
-            {
-                ms = new MemoryStream();
-                mass1 = new int[mass.Length];
-                for (int i = 0; i < mass.Length; i++)
-                    mass1[i] = mass[i];
-                Stopwatch sw = new Stopwatch();
-                sw.Start();
-                int x, j;
-                for (int i = 0; i < mass1.Length; i++)
-                {
-                    x = mass1[i];
-                    for (j = i - 1; j >= 0 && mass1[j] > x; j--)
-                        mass1[j + 1] = mass1[j];
-                    mass1[j + 1] = x;
-                    for (int k = 0; k < mass1.Length; k++)
-                    {
-                        if (k == i || k == j + 1)
-                            MSWrite(mass1[k].ToString(), true);
-                        else
-                            MSWrite(mass1[k].ToString(), false);
-                    }
-                    MSWrite("<br>", false);
-                } 
-                sw.Stop();
-                label3.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
-                ms.Position = 0;
-                webBrowser1.DocumentStream = ms;
-            }
-            else
-            {
-                int coun = 0;
-                mass1 = new int[mass.Length];
-                for (int i = 0; i < mass.Length; i++)
-                    mass1[i] = mass[i];
-                Stopwatch sw = new Stopwatch();
-                sw.Start();
-                int x, j;
-                for (int i = 0; i < mass1.Length; i++)
-                {
-                    x = mass1[i];
-                    for (j = i - 1; j >= 0 && mass1[j] > x; j--)
-                        mass1[j + 1] = mass1[j];
-                    mass1[j + 1] = x;
-                    coun++;
-                }
-                sw.Stop();
-                label4.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
-                label5.Text = coun.ToString();
-            }
-        }
+		void Type3Sort(bool write)
+		{
+			if (write)
+			{
+				ms = new MemoryStream();
+				mass1 = new int[mass.Length];
+				for (int i = 0; i < mass.Length; i++)
+					mass1[i] = mass[i];
+				Stopwatch sw = new Stopwatch();
+				sw.Start();
+				int x, j;
+				for (int i = 0; i < mass1.Length; i++)
+				{
+					x = mass1[i];
+					for (j = i - 1; j >= 0 && mass1[j] > x; j--)
+						mass1[j + 1] = mass1[j];
+					mass1[j + 1] = x;
+					for (int k = 0; k < mass1.Length; k++)
+					{
+						if (k == i || k == j + 1)
+							MSWrite(mass1[k].ToString(), true);
+						else
+							MSWrite(mass1[k].ToString(), false);
+					}
+					MSWrite("<br>", false);
+				}
+				sw.Stop();
+				label3.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
+				ms.Position = 0;
+				webBrowser1.DocumentStream = ms;
+			}
+			else
+			{
+				int coun = 0;
+				mass1 = new int[mass.Length];
+				for (int i = 0; i < mass.Length; i++)
+					mass1[i] = mass[i];
+				Stopwatch sw = new Stopwatch();
+				sw.Start();
+				int x, j;
+				for (int i = 0; i < mass1.Length; i++)
+				{
+					x = mass1[i];
+					for (j = i - 1; j >= 0 && mass1[j] > x; j--)
+						mass1[j + 1] = mass1[j];
+					mass1[j + 1] = x;
+					coun++;
+				}
+				sw.Stop();
+				label4.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
+				label5.Text = coun.ToString();
+			}
+		}
         void MSWrite(string str, bool red)
         {
             if(red)
-                ms.Write(Encoding.UTF8.GetBytes("<font color='red'>" + str + "</font> "), 0, Encoding.UTF8.GetBytes("<font color='red'>" + str + "</font> ").Length);
+				ms.Write(Encoding.UTF8.GetBytes("<font color='red' style='font-weight:bold'>" + str + "</font> "), 0, Encoding.UTF8.GetBytes("<font color='red' style='font-weight:bold'>" + str + "</font> ").Length);
             else
                 ms.Write(Encoding.UTF8.GetBytes(str + " "), 0, Encoding.UTF8.GetBytes(str + " ").Length);
         }
