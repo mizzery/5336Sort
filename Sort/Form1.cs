@@ -63,7 +63,7 @@ namespace Sort
                 Random r = new Random();
                 for (int i = 0; i < Count; i++)
                 {
-                    mass[i] = r.Next(100);
+                    mass[i] = r.Next(255);
                     TBGRN.Text += mass[i].ToString() + " ";
                 }
             }

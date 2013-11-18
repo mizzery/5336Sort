@@ -67,10 +67,10 @@ namespace Sort
                         }
                     }
                 }
-                ms.Position = 0;
-                webBrowser1.DocumentStream = ms;
                 sw.Stop();
                 label3.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
+                ms.Position = 0;
+                webBrowser1.DocumentStream = ms;
             }
             else
             {
@@ -155,6 +155,7 @@ namespace Sort
                     }
                 }
                 sw.Stop();
+                label3.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
                 ms.Position = 0;
                 webBrowser1.DocumentStream = ms;
             }
