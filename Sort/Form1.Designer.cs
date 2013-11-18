@@ -37,15 +37,17 @@
             this.B3 = new System.Windows.Forms.Button();
             this.B4 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GRN
             // 
-            this.GRN.Location = new System.Drawing.Point(1187, 12);
+            this.GRN.Location = new System.Drawing.Point(1125, 13);
             this.GRN.Name = "GRN";
-            this.GRN.Size = new System.Drawing.Size(151, 23);
+            this.GRN.Size = new System.Drawing.Size(213, 23);
             this.GRN.TabIndex = 0;
-            this.GRN.Text = "Generate Random Numbers";
+            this.GRN.Text = "Сгенерировать случайные числа";
             this.GRN.UseVisualStyleBackColor = true;
             this.GRN.Click += new System.EventHandler(this.GRN_Click);
             // 
@@ -53,12 +55,12 @@
             // 
             this.TBGRN.Location = new System.Drawing.Point(12, 13);
             this.TBGRN.Name = "TBGRN";
-            this.TBGRN.Size = new System.Drawing.Size(1169, 20);
+            this.TBGRN.Size = new System.Drawing.Size(1107, 20);
             this.TBGRN.TabIndex = 1;
             // 
             // TBGRNC
             // 
-            this.TBGRNC.Location = new System.Drawing.Point(1228, 41);
+            this.TBGRNC.Location = new System.Drawing.Point(1009, 44);
             this.TBGRNC.Name = "TBGRNC";
             this.TBGRNC.Size = new System.Drawing.Size(110, 20);
             this.TBGRNC.TabIndex = 3;
@@ -66,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1045, 44);
+            this.label1.Location = new System.Drawing.Point(826, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 13);
             this.label1.TabIndex = 4;
@@ -115,18 +117,40 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(336, 43);
+            this.checkBox1.Location = new System.Drawing.Point(12, 68);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(233, 17);
             this.checkBox1.TabIndex = 10;
             this.checkBox1.Text = "С выводом результата (очень медленно)";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1125, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(213, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Сгенерировать числа по возростанию";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1125, 70);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(213, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Сгенерировать числа по убыванию";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 77);
+            this.ClientSize = new System.Drawing.Size(1350, 102);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.B4);
             this.Controls.Add(this.B3);
@@ -153,6 +177,8 @@
         private System.Windows.Forms.Button B3;
         private System.Windows.Forms.Button B4;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

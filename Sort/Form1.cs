@@ -72,5 +72,35 @@ namespace Sort
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int Count;
+            if (int.TryParse(TBGRNC.Text, out Count))
+            {
+                TBGRN.Text = "";
+                mass = new int[Count];
+                for (int i = 0; i < Count; i++)
+                {
+                    mass[i] = i;
+                    TBGRN.Text += mass[i].ToString() + " ";
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int Count;
+            if (int.TryParse(TBGRNC.Text, out Count))
+            {
+                TBGRN.Text = "";
+                mass = new int[Count];
+                for (int i = 0, j = Count - 1; i < Count; i++, j--)
+                {
+                    mass[i] = j;
+                    TBGRN.Text += mass[i].ToString() + " ";
+                }
+            }
+        }
     }
 }
