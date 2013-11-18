@@ -1,0 +1,9 @@
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\bin\Release\Sort.exe.config
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\bin\Release\Sort.exe
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\bin\Release\Sort.pdb
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Release\Sort.Form1.resources
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Release\Sort.Properties.Resources.resources
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Release\Sort.ResF.resources
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Release\Sort.csproj.GenerateResource.Cache
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Release\Sort.exe
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Release\Sort.pdb

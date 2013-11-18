@@ -1,0 +1,10 @@
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\bin\Debug\Sort.exe.config
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\bin\Debug\Sort.exe
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\bin\Debug\Sort.pdb
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Debug\Sort.Form1.resources
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Debug\Sort.Properties.Resources.resources
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Debug\Sort.csproj.GenerateResource.Cache
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Debug\Sort.exe
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Debug\Sort.pdb
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Debug\Sort.ResF.resources
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Debug\Sort.csprojResolveAssemblyReference.cache
