@@ -36,6 +36,7 @@
             this.B2 = new System.Windows.Forms.Button();
             this.B3 = new System.Windows.Forms.Button();
             this.B4 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // GRN
@@ -111,11 +112,22 @@
             this.B4.UseVisualStyleBackColor = true;
             this.B4.Click += new System.EventHandler(this.B4_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(336, 43);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(233, 17);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "С выводом результата (очень медленно)";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 77);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.B4);
             this.Controls.Add(this.B3);
             this.Controls.Add(this.B2);
@@ -140,6 +152,7 @@
         private System.Windows.Forms.Button B2;
         private System.Windows.Forms.Button B3;
         private System.Windows.Forms.Button B4;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

@@ -23,6 +23,7 @@ namespace Sort
             f.Owner = this;
             f.Type = 0;
             f.mass = mass;
+            f.vv = checkBox1.Checked;
             f.Show();
         }
 
@@ -32,6 +33,7 @@ namespace Sort
             f.Owner = this;
             f.Type = 1;
             f.mass = mass;
+            f.vv = checkBox1.Checked;
             f.Show();
         }
 
@@ -41,6 +43,7 @@ namespace Sort
             f.Owner = this;
             f.Type = 2;
             f.mass = mass;
+            f.vv = checkBox1.Checked;
             f.Show();
         }
 
@@ -50,6 +53,7 @@ namespace Sort
             f.Owner = this;
             f.Type = 3;
             f.mass = mass;
+            f.vv = checkBox1.Checked;
             f.Show();
         }
 

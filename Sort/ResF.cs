@@ -20,18 +20,38 @@ namespace Sort
         }
         public int Type = 0;
         public int[] mass;
+        public bool vv;
         public int[] mass1;
+        MemoryStream ms;
         private void ResF_Load(object sender, EventArgs e)
         {
             if (Type == 0)
             {
-                Type0Sort(true);
+                if(vv)
+                    Type0Sort(true);
                 Type0Sort(false);
-            } 
+                this.Text = "Пузырек";
+            }
             if (Type == 1)
             {
-                Type1Sort(true);
+                if (vv)
+                    Type1Sort(true);
                 Type1Sort(false);
+                this.Text = "Седжвик";
+            }
+            if (Type == 2)
+            {
+                if (vv)
+                    Type2Sort(true);
+                Type2Sort(false);
+                this.Text = "Шейкер";
+            }
+            if (Type == 3)
+            {
+                if (vv)
+                    Type3Sort(true);
+                Type3Sort(false);
+                this.Text = "Вставки";
             }
         }
         void Type0Sort(bool write)
@@ -41,7 +61,7 @@ namespace Sort
                 mass1[i] = mass[i];
             if (write)
             {
-                MemoryStream ms = new MemoryStream();
+                ms = new MemoryStream();
                 Stopwatch sw = new Stopwatch();
                 sw.Start();
                 bool per = true;
@@ -59,11 +79,11 @@ namespace Sort
                             for (int j = 0; j < mass1.Length; j++)
                             {
                                 if (j == i || j == i + 1)
-                                    ms.Write(Encoding.UTF8.GetBytes("<font color='red'>" + mass1[j].ToString() + "</font> "), 0, Encoding.UTF8.GetBytes("<font color='red'>" + mass1[j].ToString() + "</font> ").Length);
+                                    MSWrite(mass1[j].ToString(), true);
                                 else
-                                    ms.Write(Encoding.UTF8.GetBytes(mass1[j].ToString() + " "), 0, Encoding.UTF8.GetBytes(mass1[j].ToString() + " ").Length);
+                                    MSWrite(mass1[j].ToString(), false);
                             }
-                            ms.Write(Encoding.UTF8.GetBytes("<br>"), 0, Encoding.UTF8.GetBytes("<br>").Length);
+                            MSWrite("<br>", false);
                         }
                     }
                 }
@@ -74,6 +94,7 @@ namespace Sort
             }
             else
             {
+                int coun = 0;
                 Stopwatch sw = new Stopwatch();
                 sw.Start();
                 bool per = true;
@@ -88,18 +109,20 @@ namespace Sort
                             mass1[i] = mass1[i + 1];
                             mass1[i + 1] = temp;
                             per = true;
+                            coun++;
                         }
                     }
                 }
                 sw.Stop();
                 label4.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
+                label5.Text = coun.ToString();
             }
         }
         void Type1Sort(bool write)
         {
             if(write)
             {
-                MemoryStream ms = new MemoryStream();
+                ms = new MemoryStream();
                 mass1 = new int[mass.Length];
                 for (int i = 0; i < mass.Length; i++)
                     mass1[i] = mass[i];
@@ -147,10 +170,10 @@ namespace Sort
                         {
                             for (int k = 0; k < mass1.Length; k++)
                                 if(k == q1 || k == q2)
-                                    ms.Write(Encoding.UTF8.GetBytes("<font color='red'>" + mass1[k].ToString() + "</font> "), 0, Encoding.UTF8.GetBytes("<font color='red'>" + mass1[k].ToString() + "</font> ").Length);
+                                    MSWrite(mass1[k].ToString(),true);
                                 else
-                                    ms.Write(Encoding.UTF8.GetBytes(mass1[k].ToString() + " "), 0, Encoding.UTF8.GetBytes(mass1[k].ToString() + " ").Length);
-                            ms.Write(Encoding.UTF8.GetBytes("<br>"), 0, Encoding.UTF8.GetBytes("<br>").Length);
+                                    MSWrite(mass1[k].ToString(), false);
+                            MSWrite("<br>", false);
                         }
                     }
                 }
@@ -161,6 +184,7 @@ namespace Sort
             }
             else
             {
+                int coun = 0;
                 mass1 = new int[mass.Length];
                 for (int i = 0; i < mass.Length; i++)
                     mass1[i] = mass[i];
@@ -199,11 +223,174 @@ namespace Sort
                             mass1[j + inc] = mass1[j];
                         }
                         mass1[j + inc] = temp;
+                        coun++;
                     }
                 }
                 sw.Stop();
                 label4.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
+                label5.Text = coun.ToString();
             }
+        }
+        void Type2Sort(bool write)
+        {
+            if (write)
+            {
+                ms = new MemoryStream();
+                mass1 = new int[mass.Length];
+                for (int i = 0; i < mass.Length; i++)
+                    mass1[i] = mass[i];
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                int left, right, b;
+                for (right = mass1.Length - 1, left = 0, b = -1; b != 0; )
+                {
+                    b = 0;
+                    for (int i = left; i < right; i++)
+                    {
+                        if (mass1[i] > mass1[i + 1])
+                        {
+                            int t = mass1[i];
+                            mass1[i] = mass1[i + 1];
+                            mass1[i + 1] = t;
+                            b = i;
+                            for (int j = 0; j < mass1.Length; j++)
+                            {
+                                if (j == i || j == i + 1)
+                                    MSWrite(mass1[j].ToString(),true);
+                                else
+                                    MSWrite(mass1[j].ToString(), false);
+                            }
+                            MSWrite("<br>", false);
+                        }
+                    }
+                    right = b;
+                    for (int i = right; i > left; i--)
+                    {
+                        if (mass1[i - 1] > mass1[i])
+                        {
+                            int t = mass1[i];
+                            mass1[i] = mass1[i - 1];
+                            mass1[i - 1] = t;
+                            b = i;
+                            for (int j = 0; j < mass1.Length; j++)
+                            {
+                                if (j == i || j == i - 1)
+                                    ms.Write(Encoding.UTF8.GetBytes("<font color='red'>" + mass1[j].ToString() + "</font> "), 0, Encoding.UTF8.GetBytes("<font color='red'>" + mass1[j].ToString() + "</font> ").Length);
+                                else
+                                    ms.Write(Encoding.UTF8.GetBytes(mass1[j].ToString() + " "), 0, Encoding.UTF8.GetBytes(mass1[j].ToString() + " ").Length);
+                            }
+                            ms.Write(Encoding.UTF8.GetBytes("<br>"), 0, Encoding.UTF8.GetBytes("<br>").Length);
+                        }
+                    }
+                    left = b;
+                }
+                sw.Stop();
+                label3.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
+                ms.Position = 0;
+                webBrowser1.DocumentStream = ms;
+            }
+            else
+            {
+                int coun = 0;
+                mass1 = new int[mass.Length];
+                for (int i = 0; i < mass.Length; i++)
+                    mass1[i] = mass[i];
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                int left, right, b;
+                int t;
+                for (right = mass1.Length - 1, left = 0, b = -1; b != 0; )
+                {
+                    b = 0;
+                    for (int i = left; i < right; i++)
+                    {
+                        if (mass1[i] > mass1[i + 1])
+                        {
+                            t = mass1[i];
+                            mass1[i] = mass1[i + 1];
+                            mass1[i + 1] = t;
+                            b = i;
+                            coun++;
+                        }
+                    }
+                    right = b;
+                    for (int i = right; i > left; i--)
+                    {
+                        if (mass1[i - 1] > mass1[i])
+                        {
+                            t = mass1[i];
+                            mass1[i] = mass1[i - 1];
+                            mass1[i - 1] = t;
+                            b = i;
+                            coun++;
+                        }
+                    }
+                    left = b;
+                }
+                sw.Stop();
+                label4.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
+                label5.Text = coun.ToString();
+            }
+        }
+        void Type3Sort(bool write)
+        {
+            if (write)
+            {
+                ms = new MemoryStream();
+                mass1 = new int[mass.Length];
+                for (int i = 0; i < mass.Length; i++)
+                    mass1[i] = mass[i];
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                int x, j;
+                for (int i = 0; i < mass1.Length; i++)
+                {
+                    x = mass1[i];
+                    for (j = i - 1; j >= 0 && mass1[j] > x; j--)
+                        mass1[j + 1] = mass1[j];
+                    mass1[j + 1] = x;
+                    for (int k = 0; k < mass1.Length; k++)
+                    {
+                        if (k == i || k == j + 1)
+                            MSWrite(mass1[k].ToString(), true);
+                        else
+                            MSWrite(mass1[k].ToString(), false);
+                    }
+                    MSWrite("<br>", false);
+                } 
+                sw.Stop();
+                label3.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
+                ms.Position = 0;
+                webBrowser1.DocumentStream = ms;
+            }
+            else
+            {
+                int coun = 0;
+                mass1 = new int[mass.Length];
+                for (int i = 0; i < mass.Length; i++)
+                    mass1[i] = mass[i];
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                int x, j;
+                for (int i = 0; i < mass1.Length; i++)
+                {
+                    x = mass1[i];
+                    for (j = i - 1; j >= 0 && mass1[j] > x; j--)
+                        mass1[j + 1] = mass1[j];
+                    mass1[j + 1] = x;
+                    coun++;
+                }
+                sw.Stop();
+                label4.Text = sw.ElapsedTicks.ToString() + " тиков;   " + sw.ElapsedMilliseconds.ToString() + " милисекунд";
+                label5.Text = coun.ToString();
+            }
+        }
+        void MSWrite(string str, bool red)
+        {
+            if(red)
+                ms.Write(Encoding.UTF8.GetBytes("<font color='red'>" + str + "</font> "), 0, Encoding.UTF8.GetBytes("<font color='red'>" + str + "</font> ").Length);
+            else
+                ms.Write(Encoding.UTF8.GetBytes(str + " "), 0, Encoding.UTF8.GetBytes(str + " ").Length);
         }
     }
 }

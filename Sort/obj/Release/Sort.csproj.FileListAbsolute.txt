@@ -7,3 +7,4 @@ c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Release\Sort
 c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Release\Sort.csproj.GenerateResource.Cache
 c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Release\Sort.exe
 c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Release\Sort.pdb
+c:\users\mizery\documents\visual studio 2013\Projects\Sort\Sort\obj\Release\Sort.csprojResolveAssemblyReference.cache
