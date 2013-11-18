@@ -66,11 +66,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1187, 44);
+            this.label1.Location = new System.Drawing.Point(1045, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(177, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Count:";
+            this.label1.Text = "Количество генерируемых чисел:";
             // 
             // B1
             // 
